@@ -1,0 +1,53 @@
+taskKey="com.codegym.games.snake.part02"\n\nSnake (Part 2/20)
+
+Let's color the playing field. You can do this and every other game action in the initialize method. But cramming
+everything into one method is bad practice. So, we'll initially create a couple of methods, each of which will be
+responsible for a specific job: the drawScene method is for drawing the screen, and the createGame method is for the actions required
+to create the game. Accordingly, in the initialize() method, we need to call the createGame() method, which will
+in turn call the drawScene method.
+
+To paint the cells of the playing field a specific color, you need to go through all the cells (using loops) and call the
+setCellColor method on each of them.
+Hint:
+for (int x = 0; x < WIDTH; x++) {
+for (int y = 0; y < HEIGHT; y++) {
+setCellColor(x, y, Color);
+}
+}
+
+
+Requirements:
+1.	The SnakeGame class must have a private void createGame() method.
+2.	The SnakeGame class must have a private void drawScene() method.
+3.	The drawScene() method must be called in the createGame() method.
+4.	The createGame() method must be called in the initialize() method.
+5.	In the initialize() method, the createGame() method is called after the setScreenSize(int, int) method.
+6.	In the drawScene() method, call the setCellColor(int, int, Color) method on each cell of the playing field with the following arguments: x and y coordinates and any color. For example, Color.DARKSEAGREEN.
+
+
+Snake (Part 1/20)
+
+Let's write the game Snake.
+Rules of the game:
+1.  The player controls the movement of the snake, which slithers about a square field: up, down, right and left.
+The snake cannot stop moving.
+2.  The objective of the game is to eat as many apples as possible. Apples appear in succession in a random place
+on the playing field as soon as the snake swallows the previous apple.
+3.  With each new apple, the snake grows on one segment (occupies one more cell). 3. When our game starts,
+the snake is three cells long (has three segments) and can grow to 28 cells.
+4.  As the snake grows, the game speed increases.
+5.  The snake cannot pass through itself or leave the playing field.
+5.  The game ends in victory if the snake grows to 28 segments long.
+6.  The game ends in a loss if the snake runs into itself or the edge of the playing field.
+Now let's start implementing the game:
+We need a class that will contain the game logic. Let's call it SnakeGame. Don't forget to make it inherit
+the Game class. This and other "engine" classes are in the com.codegym.engine.cell package.
+To use them, the SnakeGame class must include the following import statement:
+import com.codegym.engine.cell.*;
+If you did everything right, you can already start SnakeGame and you'll see an empty playing field.
+Create variables to store the width and height of the playing field.
+Override the parent class's public void initialize() method: it will contain commands that
+are executed once when you start the game. For example, setting the size of the playing field.
+
+
+
