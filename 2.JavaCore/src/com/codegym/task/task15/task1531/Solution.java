@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.lang.String;
+import java.math.BigInteger;
 
 /* 
 Factorial
@@ -22,18 +23,22 @@ public class Solution {
     }
 
     public static String factorial(int n) {
-        int factorialNumber = 1;
+        BigInteger factorialNumber = new BigInteger("1");
 
-        if (n == 0) {
+        if (n < 0) {
             return Integer.toString(0);
         }
 
-        else {
+        else if (n == 0) {
+            return Integer.toString(1);
+        }
 
+
+        else {
             for (int i = 1; i <= n; i++) {
-                factorialNumber = factorialNumber * i;
+                factorialNumber = factorialNumber.multiply((BigInteger.valueOf(i)));
             }
         }
-        return Integer.toString(factorialNumber);
+        return String.valueOf(factorialNumber);
     }
 }
