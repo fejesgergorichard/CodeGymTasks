@@ -1,7 +1,13 @@
 ﻿#############
 ## Idea
 #############
-
+target/
+.idea/
+.idea
+.repository/
+*.iml
+/1.JavaSyntax/
+/4.JavaCollections/
 /Instruction.png
 /out.log
 /out.log.*
