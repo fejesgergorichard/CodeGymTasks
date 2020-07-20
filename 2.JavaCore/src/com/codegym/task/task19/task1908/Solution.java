@@ -32,6 +32,7 @@ public class Solution {
         writer.close();
     }
 
+    /** Determines if a string is numerical or not */
     public static boolean isDigit(String s) {
         try {
             int a = Integer.parseInt(s);
